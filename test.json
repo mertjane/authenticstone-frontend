@@ -1,0 +1,1462 @@
+{
+  "success": true,
+  "message": "Products by category fetched",
+  "data": [
+    {
+      "id": 41919,
+      "name": "Verde Levanto Polished Marble Tiles",
+      "slug": "verde-levanto-polished-marble-tiles",
+      "permalink": "https://karakedi.xyz/product/verde-levanto-polished-marble-tiles/",
+      "date_created": "2025-07-04T22:28:16",
+      "date_created_gmt": "2025-07-04T21:28:16",
+      "date_modified": "2025-07-14T15:32:05",
+      "date_modified_gmt": "2025-07-14T14:32:05",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "149.00",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        }
+      ],
+      "images": [
+        {
+          "id": 42013,
+          "date_created": "2025-07-04T23:31:07",
+          "date_created_gmt": "2025-07-04T21:31:07",
+          "date_modified": "2025-07-04T23:31:07",
+          "date_modified_gmt": "2025-07-04T21:31:07",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Verde-Levanto-Marble-Tiles-Polished-2.jpeg",
+          "name": "Verde-Levanto-Marble-Tiles-Polished-2.jpeg",
+          "alt": ""
+        },
+        {
+          "id": 42014,
+          "date_created": "2025-07-04T23:31:09",
+          "date_created_gmt": "2025-07-04T21:31:09",
+          "date_modified": "2025-07-04T23:31:09",
+          "date_modified_gmt": "2025-07-04T21:31:09",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Verde-Levanto-Marble-Tiles-Polished.jpeg",
+          "name": "Verde-Levanto-Marble-Tiles-Polished.jpeg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": [
+            "Free Sample (100x100)",
+            "Full Size Sample (305x305)",
+            "610x305x10"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["Black", "Green", "White"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Polished (Shiny Smooth)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [42076, 42077, 42078],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/Verde-Levanto-Marble-Tiles-Polished-2.jpeg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41912,
+      "name": "Rosso Di Scacchi Chequerboard Tumbled Marble",
+      "slug": "rosso-di-scacchi-chequerboard-tumbled-marble",
+      "permalink": "https://karakedi.xyz/product/rosso-di-scacchi-chequerboard-tumbled-marble/",
+      "date_created": "2025-07-04T22:28:12",
+      "date_created_gmt": "2025-07-04T21:28:12",
+      "date_modified": "2025-07-14T15:59:31",
+      "date_modified_gmt": "2025-07-14T14:59:31",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "69.87",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        }
+      ],
+      "images": [
+        {
+          "id": 41966,
+          "date_created": "2025-07-04T23:29:43",
+          "date_created_gmt": "2025-07-04T21:29:43",
+          "date_modified": "2025-07-04T23:29:43",
+          "date_modified_gmt": "2025-07-04T21:29:43",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Rosso-Di-Scacchi-Tumbled-Marble.jpeg",
+          "name": "Rosso-Di-Scacchi-Tumbled-Marble.jpeg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": [
+            "Free Sample (100x100)",
+            "Full Size Sample (305x305)",
+            "305x305x10"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["Red", "White"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Tumbled (Rough Edgy)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Entrance",
+            "Kitchen Floor",
+            "Patio"
+          ]
+        }
+      ],
+      "variations": [42037, 42035, 42036],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/Rosso-Di-Scacchi-Tumbled-Marble.jpeg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41913,
+      "name": "Cardinale Di Scacchi Chequerboard Tumbled Marble",
+      "slug": "cardinale-di-scacchi-chequerboard-tumbled-marble",
+      "permalink": "https://karakedi.xyz/product/cardinale-di-scacchi-chequerboard-tumbled-marble/",
+      "date_created": "2025-07-04T22:28:12",
+      "date_created_gmt": "2025-07-04T21:28:12",
+      "date_modified": "2025-07-14T15:39:31",
+      "date_modified_gmt": "2025-07-14T14:39:31",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "69.94",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        }
+      ],
+      "images": [
+        {
+          "id": 41967,
+          "date_created": "2025-07-04T23:29:46",
+          "date_created_gmt": "2025-07-04T21:29:46",
+          "date_modified": "2025-07-04T23:29:46",
+          "date_modified_gmt": "2025-07-04T21:29:46",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Cardinale-Di-Scacchi-Tumbled-Marble.jpeg",
+          "name": "Cardinale-Di-Scacchi-Tumbled-Marble.jpeg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": [
+            "Free Sample (100x100)",
+            "Full Size Sample (305x305)",
+            "305x305x10"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["Black", "Red"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Tumbled (Rough Edgy)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Entrance",
+            "Kitchen Floor",
+            "Patio"
+          ]
+        }
+      ],
+      "variations": [42040, 42038, 42039],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/Cardinale-Di-Scacchi-Tumbled-Marble.jpeg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41908,
+      "name": "Diana Royal Brushed Chiseled Ed Marble Tiles",
+      "slug": "diana-royal-brushed-chiseled-ed-marble-tiles",
+      "permalink": "https://karakedi.xyz/product/diana-royal-brushed-chiseled-ed-marble-tiles/",
+      "date_created": "2025-07-04T22:28:11",
+      "date_created_gmt": "2025-07-04T21:28:11",
+      "date_modified": "2025-07-14T15:42:08",
+      "date_modified_gmt": "2025-07-14T14:42:08",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "51.00",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        }
+      ],
+      "images": [
+        {
+          "id": 41952,
+          "date_created": "2025-07-04T23:29:18",
+          "date_created_gmt": "2025-07-04T21:29:18",
+          "date_modified": "2025-07-04T23:29:18",
+          "date_modified_gmt": "2025-07-04T21:29:18",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/diana-royal-marble-tiles.jpg",
+          "name": "diana-royal-marble-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41953,
+          "date_created": "2025-07-04T23:29:20",
+          "date_created_gmt": "2025-07-04T21:29:20",
+          "date_modified": "2025-07-04T23:29:20",
+          "date_modified_gmt": "2025-07-04T21:29:20",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/diana-royal-kitchen-tiles.jpg",
+          "name": "diana-royal-kitchen-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41954,
+          "date_created": "2025-07-04T23:29:21",
+          "date_created_gmt": "2025-07-04T21:29:21",
+          "date_modified": "2025-07-04T23:29:21",
+          "date_modified_gmt": "2025-07-04T21:29:21",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/diana-royal-brushed-floor-tiles.jpg",
+          "name": "diana-royal-brushed-floor-tiles.jpg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": ["Free Sample (100x100)", "Opus Setx12"]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["Beige"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Brushed (Rough Finish)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Wet Room",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [41981, 41982],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/diana-royal-marble-tiles.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41910,
+      "name": "White Botticino Honed Marble Tiles",
+      "slug": "white-botticino-honed-marble-tiles",
+      "permalink": "https://karakedi.xyz/product/white-botticino-honed-marble-tiles/",
+      "date_created": "2025-07-04T22:28:11",
+      "date_created_gmt": "2025-07-04T21:28:11",
+      "date_modified": "2025-07-14T15:42:34",
+      "date_modified_gmt": "2025-07-14T14:42:34",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "43.80",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        }
+      ],
+      "images": [
+        {
+          "id": 41958,
+          "date_created": "2025-07-04T23:29:31",
+          "date_created_gmt": "2025-07-04T21:29:31",
+          "date_modified": "2025-07-04T23:29:31",
+          "date_modified_gmt": "2025-07-04T21:29:31",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/white-botticino-marble-tiles.jpg",
+          "name": "white-botticino-marble-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41959,
+          "date_created": "2025-07-04T23:29:33",
+          "date_created_gmt": "2025-07-04T21:29:33",
+          "date_modified": "2025-07-04T23:29:33",
+          "date_modified_gmt": "2025-07-04T21:29:33",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/white-botticino-kitchen-tiles.jpg",
+          "name": "white-botticino-kitchen-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41960,
+          "date_created": "2025-07-04T23:29:35",
+          "date_created_gmt": "2025-07-04T21:29:35",
+          "date_modified": "2025-07-04T23:29:35",
+          "date_modified_gmt": "2025-07-04T21:29:35",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/white-botticino-honed-floor-tiles.jpg",
+          "name": "white-botticino-honed-floor-tiles.jpg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": [
+            "Free Sample (100x100)",
+            "Full Size Sample (305x305)",
+            "610x305x12",
+            "610x406x12"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["White"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Honed (Matt - Smooth)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Wet Room",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [42017, 42032, 42018, 42019],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/white-botticino-marble-tiles.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41911,
+      "name": "Calacatta Marble Fluted Tiles",
+      "slug": "calacatta-marble-fluted-tiles",
+      "permalink": "https://karakedi.xyz/product/calacatta-marble-fluted-tiles/",
+      "date_created": "2025-07-04T22:28:11",
+      "date_created_gmt": "2025-07-04T21:28:11",
+      "date_modified": "2025-07-14T15:42:00",
+      "date_modified_gmt": "2025-07-14T14:42:00",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "594.00",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        }
+      ],
+      "images": [
+        {
+          "id": 41961,
+          "date_created": "2025-07-04T23:29:36",
+          "date_created_gmt": "2025-07-04T21:29:36",
+          "date_modified": "2025-07-04T23:29:36",
+          "date_modified_gmt": "2025-07-04T21:29:36",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Calacatta-Marble-Fluted-Tiles.jpg",
+          "name": "Calacatta-Marble-Fluted-Tiles.jpg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": ["Free Sample (100x100)", "910x305x12"]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["White"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Wet Room",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [42033, 42034],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/Calacatta-Marble-Fluted-Tiles.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41720,
+      "name": "Brown Emperador Honed Marble Tiles",
+      "slug": "brown-emperador-honed-marble-tiles",
+      "permalink": "https://karakedi.xyz/product/brown-emperador-honed-marble-tiles/",
+      "date_created": "2025-07-04T22:18:13",
+      "date_created_gmt": "2025-07-04T21:18:13",
+      "date_modified": "2025-07-15T12:09:59",
+      "date_modified_gmt": "2025-07-15T11:09:59",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "149.00",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        },
+        {
+          "id": 1104,
+          "name": "Stock Clearance",
+          "slug": "stock-clearance"
+        }
+      ],
+      "images": [
+        {
+          "id": 41764,
+          "date_created": "2025-07-04T23:20:32",
+          "date_created_gmt": "2025-07-04T21:20:32",
+          "date_modified": "2025-07-04T23:20:32",
+          "date_modified_gmt": "2025-07-04T21:20:32",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Brown-Emperador-Honed-Marble-Tiles.jpeg",
+          "name": "Brown-Emperador-Honed-Marble-Tiles.jpeg",
+          "alt": ""
+        },
+        {
+          "id": 41765,
+          "date_created": "2025-07-04T23:20:35",
+          "date_created_gmt": "2025-07-04T21:20:35",
+          "date_modified": "2025-07-04T23:20:35",
+          "date_modified_gmt": "2025-07-04T21:20:35",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Brown-Emperador-Honed-Marble-Tiles-2.jpeg",
+          "name": "Brown-Emperador-Honed-Marble-Tiles-2.jpeg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": [
+            "Free Sample (100x100)",
+            "Full Size Sample (300x300)",
+            "600x600x20"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["Brown"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Honed (Matt - Smooth)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Wet Room",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [42134, 42133, 42132],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/Brown-Emperador-Honed-Marble-Tiles.jpeg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41718,
+      "name": "Verde Alpi Polished Marble Tiles",
+      "slug": "verde-alpi-polished-marble-tiles",
+      "permalink": "https://karakedi.xyz/product/verde-alpi-polished-marble-tiles/",
+      "date_created": "2025-07-04T22:18:12",
+      "date_created_gmt": "2025-07-04T21:18:12",
+      "date_modified": "2025-07-15T12:16:42",
+      "date_modified_gmt": "2025-07-15T11:16:42",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "168.00",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        },
+        {
+          "id": 134,
+          "name": "Sale",
+          "slug": "sale"
+        }
+      ],
+      "images": [
+        {
+          "id": 41759,
+          "date_created": "2025-07-04T23:20:09",
+          "date_created_gmt": "2025-07-04T21:20:09",
+          "date_modified": "2025-07-04T23:20:09",
+          "date_modified_gmt": "2025-07-04T21:20:09",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Verde-Alpi-Polished-Marble-Tiles.jpeg",
+          "name": "Verde-Alpi-Polished-Marble-Tiles.jpeg",
+          "alt": ""
+        },
+        {
+          "id": 41760,
+          "date_created": "2025-07-04T23:20:12",
+          "date_created_gmt": "2025-07-04T21:20:12",
+          "date_modified": "2025-07-04T23:20:12",
+          "date_modified_gmt": "2025-07-04T21:20:12",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Verde-Alpi-Polished-Marble-Tiles-2.jpeg",
+          "name": "Verde-Alpi-Polished-Marble-Tiles-2.jpeg",
+          "alt": ""
+        },
+        {
+          "id": 41761,
+          "date_created": "2025-07-04T23:20:14",
+          "date_created_gmt": "2025-07-04T21:20:14",
+          "date_modified": "2025-07-04T23:20:14",
+          "date_modified_gmt": "2025-07-04T21:20:14",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Verde-Alpi-Polished-Marble-Tiles-3.jpeg",
+          "name": "Verde-Alpi-Polished-Marble-Tiles-3.jpeg",
+          "alt": ""
+        },
+        {
+          "id": 41762,
+          "date_created": "2025-07-04T23:20:16",
+          "date_created_gmt": "2025-07-04T21:20:16",
+          "date_modified": "2025-07-04T23:20:16",
+          "date_modified_gmt": "2025-07-04T21:20:16",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Verde-Alpi-Polished-Marble-Tiles-4.jpeg",
+          "name": "Verde-Alpi-Polished-Marble-Tiles-4.jpeg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": [
+            "Free Sample (100x100)",
+            "Full Size Sample (305x305)",
+            "610x305x10"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["Green"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Polished (Shiny Smooth)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [42138, 42137, 42136],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/Verde-Alpi-Polished-Marble-Tiles.jpeg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41710,
+      "name": "Rossa Portogallo White Marble Honed",
+      "slug": "rossa-portogallo-white-marble-honed",
+      "permalink": "https://karakedi.xyz/product/rossa-portogallo-white-marble-honed/",
+      "date_created": "2025-07-04T22:17:43",
+      "date_created_gmt": "2025-07-04T21:17:43",
+      "date_modified": "2025-07-15T12:39:51",
+      "date_modified_gmt": "2025-07-15T11:39:51",
+      "price": "39.90",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "39.90",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        },
+        {
+          "id": 950,
+          "name": "Special Deals",
+          "slug": "special-deals"
+        }
+      ],
+      "images": [
+        {
+          "id": 41750,
+          "date_created": "2025-07-04T23:19:48",
+          "date_created_gmt": "2025-07-04T21:19:48",
+          "date_modified": "2025-07-04T23:19:48",
+          "date_modified_gmt": "2025-07-04T21:19:48",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Rossa-Portogallo-White-Marble-Honed.jpeg",
+          "name": "Rossa-Portogallo-White-Marble-Honed.jpeg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": ["Mixed Sizes"]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["White"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Honed (Matt - Smooth)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Kitchen Splashback",
+            "Wet Room",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [42146],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/Rossa-Portogallo-White-Marble-Honed.jpeg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41632,
+      "name": "Bianco Carrara Rectangular Honed Marble Tiles",
+      "slug": "bianco-carrara-rectangular-honed-marble-tiles",
+      "permalink": "https://karakedi.xyz/product/bianco-carrara-rectangular-honed-marble-tiles/",
+      "date_created": "2025-07-04T22:14:55",
+      "date_created_gmt": "2025-07-04T21:14:55",
+      "date_modified": "2025-07-18T16:55:42",
+      "date_modified_gmt": "2025-07-18T15:55:42",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "59.99",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        }
+      ],
+      "images": [
+        {
+          "id": 41689,
+          "date_created": "2025-07-04T23:16:53",
+          "date_created_gmt": "2025-07-04T21:16:53",
+          "date_modified": "2025-07-04T23:16:53",
+          "date_modified_gmt": "2025-07-04T21:16:53",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-carrara-marble-honed.jpg",
+          "name": "bianco-carrara-marble-honed.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41690,
+          "date_created": "2025-07-04T23:16:56",
+          "date_created_gmt": "2025-07-04T21:16:56",
+          "date_modified": "2025-07-04T23:16:56",
+          "date_modified_gmt": "2025-07-04T21:16:56",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-carrara-honed-marble-wall-tiles.jpg",
+          "name": "bianco-carrara-honed-marble-wall-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41691,
+          "date_created": "2025-07-04T23:16:58",
+          "date_created_gmt": "2025-07-04T21:16:58",
+          "date_modified": "2025-07-04T23:16:58",
+          "date_modified_gmt": "2025-07-04T21:16:58",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/honed-bianco-carrara-marble-wall-tiles.jpg",
+          "name": "honed-bianco-carrara-marble-wall-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41692,
+          "date_created": "2025-07-04T23:16:59",
+          "date_created_gmt": "2025-07-04T21:16:59",
+          "date_modified": "2025-07-04T23:16:59",
+          "date_modified_gmt": "2025-07-04T21:16:59",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-carrara-honed-marble-floor-tiles.jpg",
+          "name": "bianco-carrara-honed-marble-floor-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41693,
+          "date_created": "2025-07-04T23:17:02",
+          "date_created_gmt": "2025-07-04T21:17:02",
+          "date_modified": "2025-07-04T23:17:02",
+          "date_modified_gmt": "2025-07-04T21:17:02",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-cararra-marble.jpg",
+          "name": "bianco-cararra-marble.jpg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": [
+            "Free Sample (100x100)",
+            "Full Size Sample (305x305)",
+            "610x305x10"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["White"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Honed (Matt - Smooth)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Wet Room",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [42186, 42185, 42184],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-carrara-marble-honed.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41633,
+      "name": "Bianco Carrara Rectangular Polished Marble Tiles",
+      "slug": "bianco-carrara-rectangular-polished-marble-tiles",
+      "permalink": "https://karakedi.xyz/product/bianco-carrara-rectangular-polished-marble-tiles/",
+      "date_created": "2025-07-04T22:14:55",
+      "date_created_gmt": "2025-07-04T21:14:55",
+      "date_modified": "2025-07-16T15:36:27",
+      "date_modified_gmt": "2025-07-16T14:36:27",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "55.90",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        }
+      ],
+      "images": [
+        {
+          "id": 41699,
+          "date_created": "2025-07-04T23:17:16",
+          "date_created_gmt": "2025-07-04T21:17:16",
+          "date_modified": "2025-07-04T23:17:16",
+          "date_modified_gmt": "2025-07-04T21:17:16",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-carrara-polished-marble-1.jpg",
+          "name": "bianco-carrara-polished-marble-1.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41700,
+          "date_created": "2025-07-04T23:17:18",
+          "date_created_gmt": "2025-07-04T21:17:18",
+          "date_modified": "2025-07-04T23:17:18",
+          "date_modified_gmt": "2025-07-04T21:17:18",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-carrara-polished-marble-wall-tiles.jpg",
+          "name": "bianco-carrara-polished-marble-wall-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41701,
+          "date_created": "2025-07-04T23:17:19",
+          "date_created_gmt": "2025-07-04T21:17:19",
+          "date_modified": "2025-07-04T23:17:19",
+          "date_modified_gmt": "2025-07-04T21:17:19",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/polished-bianco-carrara-marble-tiles.jpg",
+          "name": "polished-bianco-carrara-marble-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41702,
+          "date_created": "2025-07-04T23:17:21",
+          "date_created_gmt": "2025-07-04T21:17:21",
+          "date_modified": "2025-07-04T23:17:21",
+          "date_modified_gmt": "2025-07-04T21:17:21",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-carrara-polished-marble-floor-tiles.jpg",
+          "name": "bianco-carrara-polished-marble-floor-tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41703,
+          "date_created": "2025-07-04T23:17:22",
+          "date_created_gmt": "2025-07-04T21:17:22",
+          "date_modified": "2025-07-04T23:17:22",
+          "date_modified_gmt": "2025-07-04T21:17:22",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-carrara-marble.jpg",
+          "name": "bianco-carrara-marble.jpg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": [
+            "Free Sample (100x100)",
+            "Full Size Sample (305x305)",
+            "610x305x10"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["White"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Polished (Shiny Smooth)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [42183, 42182, 42181],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/bianco-carrara-polished-marble-1.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41627,
+      "name": "Calacatta Viola Monet Honed Marble Tiles",
+      "slug": "calacatta-viola-monet-honed-marble-tiles",
+      "permalink": "https://karakedi.xyz/product/calacatta-viola-monet-honed-marble-tiles/",
+      "date_created": "2025-07-04T22:14:53",
+      "date_created_gmt": "2025-07-04T21:14:53",
+      "date_modified": "2025-07-17T13:22:39",
+      "date_modified_gmt": "2025-07-17T12:22:39",
+      "price": "0",
+      "regular_price": "",
+      "sale_price": "",
+      "price_html": "79.00",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 124,
+          "name": "Marble Tiles",
+          "slug": "marble-tiles"
+        },
+        {
+          "id": 134,
+          "name": "Sale",
+          "slug": "sale"
+        },
+        {
+          "id": 1104,
+          "name": "Stock Clearance",
+          "slug": "stock-clearance"
+        }
+      ],
+      "images": [
+        {
+          "id": 41673,
+          "date_created": "2025-07-04T23:16:16",
+          "date_created_gmt": "2025-07-04T21:16:16",
+          "date_modified": "2025-07-04T23:16:16",
+          "date_modified_gmt": "2025-07-04T21:16:16",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Calacatta-Viola-Monet-Honed-Marble-Tiles.jpg",
+          "name": "Calacatta-Viola-Monet-Honed-Marble-Tiles.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41674,
+          "date_created": "2025-07-04T23:16:18",
+          "date_created_gmt": "2025-07-04T21:16:18",
+          "date_modified": "2025-07-04T23:16:18",
+          "date_modified_gmt": "2025-07-04T21:16:18",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Calacatta-Viola-Monet-Honed-Marble-Tiles-2.jpg",
+          "name": "Calacatta-Viola-Monet-Honed-Marble-Tiles-2.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41675,
+          "date_created": "2025-07-04T23:16:23",
+          "date_created_gmt": "2025-07-04T21:16:23",
+          "date_modified": "2025-07-04T23:16:23",
+          "date_modified_gmt": "2025-07-04T21:16:23",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Calacatta-Viola-Monet-Honed-Marble-Tiles-3.jpg",
+          "name": "Calacatta-Viola-Monet-Honed-Marble-Tiles-3.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41676,
+          "date_created": "2025-07-04T23:16:25",
+          "date_created_gmt": "2025-07-04T21:16:25",
+          "date_modified": "2025-07-04T23:16:25",
+          "date_modified_gmt": "2025-07-04T21:16:25",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Calacatta-Viola-Monet-Honed-Marble-Tiles-4.jpg",
+          "name": "Calacatta-Viola-Monet-Honed-Marble-Tiles-4.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41677,
+          "date_created": "2025-07-04T23:16:26",
+          "date_created_gmt": "2025-07-04T21:16:26",
+          "date_modified": "2025-07-04T23:16:26",
+          "date_modified_gmt": "2025-07-04T21:16:26",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Calacatta-Viola-Monet-Honed-Marble-Tiles-5.jpg",
+          "name": "Calacatta-Viola-Monet-Honed-Marble-Tiles-5.jpg",
+          "alt": ""
+        },
+        {
+          "id": 41678,
+          "date_created": "2025-07-04T23:16:28",
+          "date_created_gmt": "2025-07-04T21:16:28",
+          "date_modified": "2025-07-04T23:16:28",
+          "date_modified_gmt": "2025-07-04T21:16:28",
+          "src": "https://karakedi.xyz/wp-content/uploads/2025/07/Calacatta-Viola-Monet-Honed-Marble-Tiles-6.jpg",
+          "name": "Calacatta-Viola-Monet-Honed-Marble-Tiles-6.jpg",
+          "alt": ""
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "name": "Sizemm",
+          "slug": "pa_sizemm",
+          "position": 0,
+          "visible": true,
+          "variation": true,
+          "options": [
+            "Free Sample (100x100)",
+            "Full Size Sample (305x305)",
+            "610x305x10"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Colour",
+          "slug": "pa_colour",
+          "position": 1,
+          "visible": true,
+          "variation": false,
+          "options": ["Grey", "Gold", "White"]
+        },
+        {
+          "id": 2,
+          "name": "Finish",
+          "slug": "pa_finish",
+          "position": 2,
+          "visible": true,
+          "variation": false,
+          "options": ["Polished (Shiny Smooth)"]
+        },
+        {
+          "id": 7,
+          "name": "Material",
+          "slug": "pa_material",
+          "position": 3,
+          "visible": true,
+          "variation": false,
+          "options": ["Marble Tiles"]
+        },
+        {
+          "id": 8,
+          "name": "Room type usage",
+          "slug": "pa_room-type-usage",
+          "position": 4,
+          "visible": true,
+          "variation": false,
+          "options": [
+            "Bathroom Floor",
+            "Living Room Floor",
+            "Wet Room",
+            "Bathroom Wall",
+            "Kitchen Floor"
+          ]
+        }
+      ],
+      "variations": [42201, 42200, 42199],
+      "yoast_head_json": {
+        "og_image": [
+          {
+            "width": 1500,
+            "height": 1500,
+            "url": "https://karakedi.xyz/wp-content/uploads/2025/07/Calacatta-Viola-Monet-Honed-Marble-Tiles.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "current_page": 1,
+    "per_page": 12,
+    "total_pages": 13,
+    "total_products": 151,
+    "has_next_page": true,
+    "has_prev_page": false,
+    "category_id": 124,
+    "category_slug": "marble-tiles"
+  }
+}

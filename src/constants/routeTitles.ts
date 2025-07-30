@@ -1,0 +1,72 @@
+// Display title mapping for different route slugs
+export const ROUTE_TITLES = {
+  // Colors
+  "white": "White", 
+  "whites": "Whites",
+  "black": "Black", 
+  "blacks": "Blacks", 
+  "grey": "Grey", 
+  "greys": "Greys",
+  "beige-brown": "Beige & Brown", 
+  "beiges-browns": "Beiges & Browns",
+  "cream-yellow": "Cream & Yellow", 
+  "creams-yellows": "Creams & Yellows",
+  "blues-green": "Blues & Green", 
+  "blue-green": "Blues & Green", 
+  "blues-greens": "Blues & Greens",
+  "red-pink": "Red & Pink", 
+  "reds-pinks": "Reds & Pinks",
+  "multi-colour": "Multi Colour", 
+  "multicolor-pattern": "Multicolor & Pattern", 
+  "multicolors-patterns": "Multicolors & Patterns",
+  
+  // Usage areas
+  "kitchen": "Kitchen", 
+  "kitchen-splashback": "Kitchen Splashback",
+  "bathroom": "Bathroom", 
+  "bathroom-floor": "Bathroom Floor",
+  "living-room": "Living Room", 
+  "living-room-floor": "Living Room Floor",
+  "outdoor": "Outdoor", 
+  "pool": "Pool", 
+  "wet-room": "Wet Room",
+  
+  // Finishes
+  "brushed-rough-finish": "Brushed (Rough Finish)",
+  "honed-matt-smooth": "Honed (Matt Smooth)",
+  "polished-shiny-smooth": "Polished (Shiny Smooth)",
+  "split-face": "Split Face",
+  "tumbled-rough-edgy": "Tumbled (Rough Edgy)",
+
+  // Collection titles  
+  "all-products": "All Products",
+  "new-arrivals": "New Arrivals",
+  "marble-tiles": "Marble Tiles",
+  "limestone-tiles": "Limestone Tiles",
+  "stone-mosaic-tiles": "Stone Mosaic Tiles",
+  "mosaic-tiles": "Mosaic Tiles",
+  "travertine-tiles": "Travertine Tiles",
+  "slate-tiles": "Slate Tiles",
+  "stone-pavers": "Stone Pavers",
+  "granite-tiles": "Granite Tiles",
+  "clay-brick-slips": "Clay Brick Slips",
+  "bookmatch-slabs": "Bookmatch Slabs",
+  "slabs": "Slabs",
+  "vanity-tops": "Vanity Tops",
+  "off-cut-granite-quartz": "Off Cut Granite & Quartz",
+  "window-sills": "Window Sills",
+  "mouldings-skirtings": "Mouldings & Skirtings",
+  "stone-sinks": "Stone Sinks",
+  "slate-hearths": "Slate Hearths",
+  "table-tops": "Table Tops",
+  "chequerboard-tiles": "Chequerboard Tiles",
+  "herringbone-tiles": "Herringbone Tiles",
+  "hexagon-tiles": "Hexagon Tiles",
+  "metro-tiles": "Metro Tiles",
+  "maxi-chequerboard-tiles": "Maxi Chequerboard Tiles",
+  "octagon-cabochon-tiles": "Octagon Cabochon Tiles",
+  "triangle-tiles": "Triangle Tiles",
+  'stock-clearance': 'Stock Clearance'
+} as const;
+
+export type RouteTitleKey = keyof typeof ROUTE_TITLES; 

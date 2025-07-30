@@ -1,0 +1,295 @@
+/* Root variables and base styles */
+
+@import "tailwindcss";
+@tailwind utilities;
+
+/* Change your @font-face declarations to use the same font-family name */
+@font-face {
+  font-family: "Gill Sans";
+  src: url("/fonts/GillSansLight.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gill Sans";
+  src: url("/fonts/GillSans.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gill Sans";
+  src: url("/fonts/GillSansMedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #1d2328;
+  background-color: #ffffff;
+  --font-light: 100;
+  --font-regular: 300;
+  --font-medium: 500;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset margins, paddings, and box model */
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #ffffff;
+    color: #1d2328;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Juana", serif;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  h1 span,
+  h2 span,
+  h3 span,
+  h4 span,
+  h5 span,
+  h6 span {
+    font-family: "Juana", serif;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .description-content span {
+    font-weight: var(--font-light);
+    /* or 300, or normal/light */
+  }
+
+  p,
+  a,
+  span,
+  label,
+  button,
+  dd,
+  dl {
+    font-family: 'Gill Sans', sans-serif;
+  }
+
+  /* Buttons and links */
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Images and media */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Forms */
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+
+/* WP Pages Styles */
+
+@layer components {
+
+  .wp-block-heading,
+  h2 {
+    @apply text-5xl font-medium my-6;
+  }
+
+  .has-text-align-center {
+    @apply text-center;
+  }
+
+  .has-huge-font-size {
+    @apply text-5xl;
+  }
+
+  .wp-block-separator {
+    @apply hidden;
+  }
+
+  .wp-image-12972 {
+    @apply md:max-w-4xl max-w-[470px] mx-auto;
+  }
+
+  .contact-wrapper .wp-block-columns {
+    @apply flex flex-col md:w-3/5 w-full;
+  }
+
+  .ti-widget {
+    @apply w-full
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+  }
+
+
+}
+
+
+
+
+.wpcf7-form input,
+.wpcf7-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.wpcf7-form input:focus,
+.wpcf7-form textarea:focus {
+  border: 1px solid #1d2328;
+  transition: 0.3s;
+}
+
+.wpcf7-form input[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+  background-color: #333;
+}
+
+/* Ensure map is visible */
+#map {
+  flex: 1;
+  height: 400px !important;
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 4.8em;
+}
+
+
+/* Checkout radiobutton */
+
+.selection-list::before {
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  content: "";
+  height: 20px;
+  margin-right: 15px;
+  width: 20px;
+  transition: 0.3s ease;
+}
+
+.selection-list.selected::before {
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNyAxMy41QzMuNDEwMDUgMTMuNSAwLjUgMTAuNTg5OSAwLjUgN0MwLjUgMy40MTAwNSAzLjQxMDA1IDAuNSA3IDAuNUMxMC41ODk5IDAuNSAxMy41IDMuNDEwMDUgMTMuNSA3QzEzLjUgMTAuNTg5OSAxMC41ODk5IDEzLjUgNyAxMy41Wk02LjM1MTk1IDkuNkwxMC45NDc0IDUuMDAzODVMMTAuMDI4MyA0LjA4NDc1TDYuMzUxOTUgNy43NjE4TDQuNTEzMSA1LjkyMjk1TDMuNTk0IDYuODQyMDVMNi4zNTE5NSA5LjZaIiBmaWxsPSIjOTI0MDBFIi8+PC9zdmc+") 50% no-repeat;
+  background-size: auto;
+  background-size: 20px;
+  border: none;
+  content: "";
+  transition: 0.3s ease;
+}
+
+.terms-checkboxes {
+  border: 1px solid #e5e5e5;
+  height: 20px;
+  min-width: 20px;
+  padding: 0 !important;
+  width: 20px;
+  appearance: none;
+  transition: 0.3s ease;
+}
+
+.terms-checkboxes:checked {
+  transition: 0.3s ease;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgZmlsbD0ibm9uZSI+DQoNCgk8cGF0aCBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04LjY2IDExLjhDOC4wMyAxMS4xNyA3IDkuOTkgNi4zMiA5LjI0Yy0uNjgtLjctMS4xMi0uMS0xLjk1Ljg2LS45MiAxLjAyIDAgMS41NSAxLjMyIDNsMi4zOSAyLjYzYy44Ny44NiAxLjYtLjQzIDIuNzctMS42Nmw0Ljc4LTUuMzFjMS41LTEuNjEgMS44NS0xLjYxLjYzLTIuOS0xLjA3LTEuMjMtMS4wMi0xLjIzLTIuNzMuNy0uNzguOC00LjYyIDUuMS00Ljg3IDUuMjZ6IiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz4NCjwvc3ZnPg0K) 50%/100% no-repeat #92400e;
+  border-color: #92400e;
+}
