@@ -51,11 +51,21 @@ const createInfiniteStoneColourHook = (colour: StoneColourSlug) => {
     return useInfiniteQuery({
       queryKey: ['stoneColours', colour, 'infinite'],
       queryFn: ({ pageParam = 1 }) => apiFunction(pageParam, 12),
-      getNextPageParam: (lastPage) => {
+      /* getNextPageParam: (lastPage) => {
         if (lastPage && lastPage.meta && lastPage.meta.has_next_page) {
           return lastPage.meta.current_page + 1;
         }
         return undefined;
+      }, */
+      getNextPageParam: (lastPage) => {
+        if (!lastPage || !lastPage.meta) {
+          console.error("⚠️ Invalid API response:", lastPage);
+          return undefined;
+        }
+
+        return lastPage.meta.has_next_page
+          ? lastPage.meta.current_page + 1
+          : undefined;
       },
       initialPageParam: 1,
       staleTime: 5 * 60 * 1000,
@@ -188,11 +198,21 @@ const createInfiniteStoneUsageAreaHook = (usageArea: StoneUsageAreasSlug) => {
     return useInfiniteQuery({
       queryKey: ['stoneUsageAreas', usageArea, 'infinite'],
       queryFn: ({ pageParam = 1 }) => apiFunction(pageParam, 12),
-      getNextPageParam: (lastPage) => {
+      /* getNextPageParam: (lastPage) => {
         if (lastPage && lastPage.meta && lastPage.meta.has_next_page) {
           return lastPage.meta.current_page + 1;
         }
         return undefined;
+      }, */
+      getNextPageParam: (lastPage) => {
+        if (!lastPage || !lastPage.meta) {
+          console.error("⚠️ Invalid API response:", lastPage);
+          return undefined;
+        }
+
+        return lastPage.meta.has_next_page
+          ? lastPage.meta.current_page + 1
+          : undefined;
       },
       initialPageParam: 1,
       staleTime: 5 * 60 * 1000,
@@ -319,11 +339,21 @@ const createInfiniteStoneFinishHook = (finish: StoneFinishSlug) => {
     return useInfiniteQuery({
       queryKey: ['stoneFinishes', finish, 'infinite'],
       queryFn: ({ pageParam = 1 }) => apiFunction(pageParam, 12),
-      getNextPageParam: (lastPage) => {
+      /* getNextPageParam: (lastPage) => {
         if (lastPage.meta.has_next_page) {
           return lastPage.meta.current_page + 1;
         }
         return undefined;
+      }, */
+      getNextPageParam: (lastPage) => {
+        if (!lastPage || !lastPage.meta) {
+          console.error("⚠️ Invalid API response:", lastPage);
+          return undefined;
+        }
+
+        return lastPage.meta.has_next_page
+          ? lastPage.meta.current_page + 1
+          : undefined;
       },
       initialPageParam: 1,
       staleTime: 5 * 60 * 1000,

@@ -84,11 +84,21 @@ const createInfiniteStoneCollectionHook = (category: StoneCategorySlug) => {
     return useInfiniteQuery({
       queryKey: ['stoneCollection', category, 'infinite'],
       queryFn: ({ pageParam = 1 }) => apiFunction(pageParam, 12),
-      getNextPageParam: (lastPage) => {
+      /* getNextPageParam: (lastPage) => {
         if (lastPage.meta.has_next_page) {
           return lastPage.meta.current_page + 1;
         }
         return undefined;
+      }, */
+      getNextPageParam: (lastPage) => {
+        if (!lastPage || !lastPage.meta) {
+          console.error("⚠️ Invalid API response:", lastPage);
+          return undefined;
+        }
+
+        return lastPage.meta.has_next_page
+          ? lastPage.meta.current_page + 1
+          : undefined;
       },
       initialPageParam: 1,
       staleTime: 5 * 60 * 1000,

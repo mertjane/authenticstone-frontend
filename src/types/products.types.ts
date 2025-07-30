@@ -59,7 +59,7 @@ export interface ApiResponse<T> {
     per_page: number;
     total_pages: number;
     total_products: number;
-    has_next_page: boolean;
+    has_next_page?: boolean;
     has_prev_page: boolean;
     category_id: number;
     category_slug: string;
