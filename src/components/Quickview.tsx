@@ -155,6 +155,7 @@ const Quickview = ({
                   setShowSizeError={setShowSizeError}
                   hasFreeSample={hasFreeSample}
                   m2Quantity={m2Quantity} 
+                  productId={productId}
                 />
                 {/* Delivery Info Section */}
                 <div className="flex flex-col items-center mt-4">
