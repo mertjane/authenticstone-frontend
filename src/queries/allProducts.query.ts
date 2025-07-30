@@ -37,15 +37,25 @@ export const useInfiniteAllProductsQuery = (
 
   return useInfiniteQuery<ApiResponse<Product[]>, Error>({
     queryKey: ["all-products-infinite", baseParams],
-    queryFn: ({ pageParam = 1 }) =>
-      fetchAllProducts({ ...baseParams, page: Number(pageParam) }),
+    queryFn: async ({ pageParam = 1 }) => {
+      const response = await fetchAllProducts({ ...baseParams, page: Number(pageParam) });
+
+      if (!response || typeof response !== "object" || !response.meta) {
+        console.warn("⚠️ fetchAllProducts returned unexpected response:", response);
+      }
+
+      return response;
+    },
     initialPageParam: 1,
     getNextPageParam: (lastPage) => {
+      if (!lastPage || !lastPage.meta) return undefined;
+
       const { current_page, total_pages } = lastPage.meta;
       return current_page < total_pages ? current_page + 1 : undefined;
     },
   });
 };
+
 
 /**
  * Prefetch function for SSR or page transitions
