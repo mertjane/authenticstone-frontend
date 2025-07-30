@@ -17,7 +17,7 @@ const LostPasswordPage = () => {
   const mutation = useMutation({
     mutationFn: (email: string) =>
       axios
-        .post("http://localhost:4000/api/auth/lost-password", { email })
+        .post(`${import.meta.env.VITE_API_URL}/api/auth/lost-password`, { email })
         .then((res: any) => res.data),
     onSuccess: () =>
       navigate(`${ROUTES.LOST_PWD}?reset-link-sent=true`, { replace: true }),
