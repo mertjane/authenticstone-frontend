@@ -85,7 +85,7 @@ const createInfiniteStoneCollectionHook = (category: StoneCategorySlug) => {
       queryKey: ['stoneCollection', category, 'infinite'],
       queryFn: ({ pageParam = 1 }) => apiFunction(pageParam, 12),
       getNextPageParam: (lastPage) => {
-        if (lastPage.meta.has_next_page) {
+        if (lastPage && lastPage.meta && lastPage.meta.has_next_page) {
           return lastPage.meta.current_page + 1;
         }
         return undefined;
