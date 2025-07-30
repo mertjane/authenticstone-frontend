@@ -59,7 +59,7 @@ export interface UpdateProfileResponse {
 
 // Create axios instance
 const authApi = axios.create({
-  baseURL: '/api',
+  baseURL: /* '/api', */ import.meta.env.VITE_API_URL,
   /* baseURL: 'https://karakedi.xyz/api',  */
   withCredentials: true,
   headers: {
