@@ -23,30 +23,32 @@ export const useNewArrivalsQuery = (params: FetchNewArrivalsParams = {}) => {
   });
 };
 
-/**
- * Infinite query for "Load More pagination"
- */
-
 export const useInfiniteNewArrivalQuery = (
   initialParams: Omit<FetchNewArrivalsParams, "page"> = {}
 ) => {
   const baseParams = {
-    ...initialParams = {
-      per_page: initialParams.per_page ?? DEFAULT_PER_PAGE,
-    }
+    ...initialParams,
+    per_page: initialParams.per_page ?? DEFAULT_PER_PAGE,
   };
 
   return useInfiniteQuery<ApiResponse<Product[]>, Error>({
-    queryKey: ['new-arrival-infinite', baseParams],
-    queryFn: ({pageParam = 1}) => 
-      fetchNewArrivals({...baseParams, page: Number(pageParam) }),
+    queryKey: ["new-arrival-infinite", baseParams],
+    queryFn: ({ pageParam = 1 }) =>
+      fetchNewArrivals({ ...baseParams, page: Number(pageParam) }),
     initialPageParam: 1,
     getNextPageParam: (lastPage) => {
+      // ✅ Check before destructuring
+      if (!lastPage || !lastPage.meta) {
+        console.warn("⚠️ Missing meta in lastPage:", lastPage);
+        return undefined;
+      }
+
       const { current_page, total_pages } = lastPage.meta;
       return current_page < total_pages ? current_page + 1 : undefined;
-    }
-  })
-}
+    },
+  });
+};
+
 
 
 /**
