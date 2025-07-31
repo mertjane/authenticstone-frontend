@@ -58,10 +58,21 @@ export interface UpdateProfileResponse {
 }
 
 // Create axios instance
-const authApi = axios.create({
-  baseURL: /* '/api', */ import.meta.env.VITE_API_URL,
-  /* baseURL: 'https://karakedi.xyz/api',  */
+/* const authApi = axios.create({
+  baseURL: '/api',
+  baseURL: 'https://karakedi.xyz/api', 
   withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+}); */
+
+const authApi = axios.create({
+  baseURL: import.meta.env.VITE_API_URL 
+    ? `${import.meta.env.VITE_API_URL}/api`  // Production: https://authenticstone-backend.onrender.com/api
+    : '/api', // Development fallback
+  withCredentials: true,
+  timeout: 10000, // 10 second timeout
   headers: {
     'Content-Type': 'application/json',
   },
