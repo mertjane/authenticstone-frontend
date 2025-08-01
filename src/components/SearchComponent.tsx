@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
-import Cart from "./Cart";
+
 
 interface SearchComponentProps {
   isOpen: boolean;

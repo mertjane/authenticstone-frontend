@@ -11,7 +11,7 @@ interface HeroSliderProps {
 const Hero = ({ slides, autoSlideInterval = 10000 }: HeroSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-  const [direction, setDirection] = useState<number>(1);
+  const [direction, _setDirection] = useState<number>(1);
 
   // Animation variants
   const slideVariants = {
