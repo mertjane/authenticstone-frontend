@@ -1,6 +1,8 @@
 import { Link } from "react-router";
 import type { MegaMenuItem } from "../types/menuContent.types";
 import { generateCategoryLink } from "../utils/generateCategoryLink";
+import MegamenuCustomImg from "./MegamenuCustomImg";
+import MegamenuDesignImg from "./MegamenuDesignImg";
 
 interface MegamenuProps {
   data: MegaMenuItem;
@@ -21,6 +23,14 @@ const Megamenu = ({ data, isMenuOpen, onClose }: MegamenuProps) => {
     children.length > 0 &&
     !children.some((c) => c.children && c.children.length > 0);
 
+  // Check if this is the Custom Stone Work menu
+  const isCustomStoneWork =
+    data.title.toLowerCase().includes("custom stonework") ||
+    data.title.toLowerCase().includes("custom stonework");
+
+    const isDesignPattern =
+    data.title.toLowerCase().includes("design & pattern") ||
+    data.title.toLowerCase().includes("design & pattern");
   return (
     <>
       {/* Overlay */}
@@ -54,23 +64,36 @@ const Megamenu = ({ data, isMenuOpen, onClose }: MegamenuProps) => {
         >
           {isFlatList ? (
             // ONE column: heading + all children as vertical list
-            <div className="pr-6 last:border-r-0">
-              <h2 className="uppercase text-lg font-semibold mb-4 text-amber-800">
-                {data.title}
-              </h2>
-              <ul className="space-y-2">
-                {children.map((child, i) => (
-                  <li key={child.title + i} className="w-max">
-                    <Link
-                      onClick={handleCloseMenu}
-                      to={generateCategoryLink(data.title, child.title)}
-                      className="text-lg text-gray-600 hover:text-gray-900 hover:underline transition-colors duration-200 block"
-                    >
-                      {child.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <div className="pr-6 last:border-r-0 flex">
+              <div>
+                <h2 className="uppercase text-xl font-semibold mb-4 text-amber-800 w-max">
+                  {data.title}
+                </h2>
+                <ul className="space-y-2 w-max">
+                  {children.map((child, i) => (
+                    <li key={child.title + i} className="w-max">
+                      <Link
+                        onClick={handleCloseMenu}
+                        to={generateCategoryLink(data.title, child.title)}
+                        className="text-2xl text-gray-600 hover:text-gray-900 hover:underline transition-colors duration-200 block font-[var(--font-light)]"
+                      >
+                        {child.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Show custom images for Custom Stone Work menu */}
+              {isCustomStoneWork && (
+                <div className="mt-8 flex w-full justify-end">
+                  <MegamenuCustomImg />
+                </div>
+              )}
+              {isDesignPattern && (
+                <div className="mt-8 flex w-full justify-end">
+                  <MegamenuDesignImg />
+                </div>
+              )}
             </div>
           ) : (
             // Normal case: multiple columns for categories with subchildren
@@ -81,9 +104,9 @@ const Megamenu = ({ data, isMenuOpen, onClose }: MegamenuProps) => {
               return (
                 <div
                   key={`${category.title}-${i}`}
-                  className="pr-6  last:border-r-0"
+                  className="pr-6 last:border-r-0"
                 >
-                  <h2 className="uppercase text-lg font-semibold mb-4 text-amber-800">
+                  <h2 className="uppercase text-xl font-semibold mb-4 text-amber-800">
                     {category.title}
                   </h2>
                   {hasSubChildren ? (
@@ -96,7 +119,7 @@ const Megamenu = ({ data, isMenuOpen, onClose }: MegamenuProps) => {
                               category.title,
                               child.title
                             )}
-                            className="text-lg text-gray-600 hover:text-gray-900 hover:underline transition-colors duration-200 block"
+                            className="text-xl font-[var(--font-light)] text-gray-600 hover:text-gray-900 hover:underline transition-colors duration-200 block"
                           >
                             {child.title}
                           </Link>

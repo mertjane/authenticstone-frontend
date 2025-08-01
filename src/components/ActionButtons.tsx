@@ -238,7 +238,7 @@ const ActionButtons = ({
       <button
         disabled={isAddingRegularProduct}
         onClick={handleAddToCart}
-        className={`min-h-[61px] flex-1 px-4 py-4 text-lg tracking-wide font-thin flex item-center gap-2 justify-center uppercase text-center border border-[#aa4a44]
+        className={`min-h-[61px] flex-1 flex items-center justify-center  px-4 md:text-lg text-sm tracking-wide font-thin gap-2 uppercase border border-[#aa4a44]
     ${
       isValidQty && selectedVariation
         ? "bg-[#aa4a44] text-white border-[#aa4a44]"
@@ -274,7 +274,7 @@ const ActionButtons = ({
         <button
           disabled={isAddingFreeSample}
           onClick={handleOrderFreeSample}
-          className="flex-1 flex items-center justify-center gap-4 px-4 py-4 text-lg text-[#1d2328] border border-[#1d2328] tracking-wide font-thin uppercase text-center hover:bg-[#1d2328] duration-300 hover:text-white"
+          className="min-h-[61px] flex-1 flex items-center justify-center gap-4 px-4 md:text-lg text-sm text-[#1d2328] border border-[#1d2328] tracking-wide font-thin uppercase text-center hover:bg-[#1d2328] duration-300 hover:text-white"
         >
           {isAddingFreeSample ? (
             <>

@@ -7,6 +7,9 @@ import { useNavigate } from "react-router";
 import { ROUTES } from "../routes/routePaths";
 import { useAuth } from "../hooks/useAuth";
 import useIsMobile from "../hooks/useIsMobile";
+import axios from "axios";
+import { useQueryClient } from "@tanstack/react-query";
+import { baseUrl } from "../lib/constants/baseUrl";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -16,6 +19,8 @@ const Cart = () => {
   const { cartItems, isLoading, getItemTotal, getSubtotal, removeFromCart } =
     useCart();
   const [removingItem, setRemovingItem] = useState<number[]>([]);
+  const [updatingItem, setUpdatingItem] = useState<number[]>([]);
+  const queryClient = useQueryClient();
 
   // Calculate total items count
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
@@ -23,6 +28,236 @@ const Cart = () => {
   const subTotal = getSubtotal().toFixed(2);
   const vatAmount = (parseFloat(subTotal) * 0.2).toFixed(2);
   const total = parseFloat(subTotal);
+
+  // Calculate m2_quantity based on dimensions and quantity
+  const calculateM2Quantity = (item: any, newQuantity: number) => {
+    const sizeData = item.meta_data?.find(
+      (m: any) => m.key === "pa_sizemm"
+    )?.value;
+    
+    if (!sizeData) return newQuantity;
+
+    // Extract dimensions (e.g., "305x305x10" -> [305, 305, 10])
+    const dimensions = sizeData.split("x").map(Number);
+    if (dimensions.length < 2) return newQuantity;
+
+    // Calculate area of one piece in square meters
+    const lengthM = dimensions[0] / 1000; // Convert mm to meters
+    const widthM = dimensions[1] / 1000; // Convert mm to meters
+    const pieceAreaM2 = lengthM * widthM;
+
+    // Total m2 = quantity × area per piece
+    return parseFloat((newQuantity * pieceAreaM2).toFixed(3));
+  };
+
+  // Handle quantity update with optimistic updates for instant UI response
+  const handleQuantityUpdate = async (item: any, newQuantity: number, newM2Quantity?: number) => {
+    if (newQuantity < 1) return; // Don't allow quantity less than 1
+
+    // Short loading state for visual feedback
+    setUpdatingItem(prev => [...prev, item.id]);
+    
+    // Remove loading state quickly since UI updates are instant
+    setTimeout(() => {
+      setUpdatingItem(prev => prev.filter(id => id !== item.id));
+    }, 300); // Quick visual feedback
+
+    try {
+      const isSample = item.is_sample || 
+        item.meta_data?.some((m: any) => 
+          m.key === "free-sample" || 
+          m.value === "free-sample" ||
+          m.key === "full-size-sample" ||
+          m.value === "full-size-sample" ||
+          m.key.includes("full-size-sample-") ||
+          m.value.includes("full-size-sample-")
+        );
+
+      // Calculate M2 quantity if not provided and not a sample
+      let finalM2Quantity = newM2Quantity;
+      if (!isSample && !finalM2Quantity) {
+        finalM2Quantity = calculateM2Quantity(item, newQuantity);
+      }
+
+      console.log('Optimistic update - immediate UI update:', {
+        id: item.id,
+        product_id: item.product_id,
+        variation_id: item.variation_id,
+        old_quantity: item.quantity,
+        new_quantity: newQuantity,
+        old_m2_quantity: item.m2_quantity,
+        new_m2_quantity: finalM2Quantity,
+        is_sample: isSample
+      });
+
+      // STEP 1: Optimistic Update - Immediately update the UI
+      queryClient.setQueryData(['cart'], (oldData: any) => {
+        if (!oldData) return oldData;
+        
+        return oldData.map((cartItem: any) => {
+          if (cartItem.id === item.id) {
+            return {
+              ...cartItem,
+              quantity: newQuantity,
+              m2_quantity: finalM2Quantity || cartItem.m2_quantity,
+              // Update display_quantity for UI
+              display_quantity: isSample ? newQuantity : (finalM2Quantity || newQuantity)
+            };
+          }
+          return cartItem;
+        });
+      });
+
+      // STEP 2: Background sync with backend (doesn't block UI)
+      // Do the remove/add operation in the background
+      handleQuantityUpdateFallback(item, newQuantity, finalM2Quantity).catch((error: any) => {
+        console.error('Background sync failed, reverting optimistic update:', error);
+        
+        // STEP 3: Revert optimistic update if backend sync fails
+        queryClient.setQueryData(['cart'], (oldData: any) => {
+          if (!oldData) return oldData;
+          
+          return oldData.map((cartItem: any) => {
+            if (cartItem.id === item.id) {
+              // Revert to original values
+              return {
+                ...cartItem,
+                quantity: item.quantity,
+                m2_quantity: item.m2_quantity,
+                display_quantity: item.display_quantity
+              };
+            }
+            return cartItem;
+          });
+        });
+        
+        // Show user-friendly error message
+        alert(`Failed to update quantity: ${error.response?.data?.message || error.message}`);
+      });
+      
+      console.log('Optimistic update applied, background sync started');
+      
+    } catch (error: any) {
+      console.error('Optimistic update failed:', error);
+      setUpdatingItem(prev => prev.filter(id => id !== item.id));
+    }
+  };
+
+  // Remove and re-add method (now used for background sync)
+  const handleQuantityUpdateFallback = async (item: any, newQuantity: number, newM2Quantity?: number) => {
+    if (newQuantity < 1) return;
+
+    const isSample = item.is_sample || 
+      item.meta_data?.some((m: any) => 
+        m.key === "free-sample" || 
+        m.value === "free-sample" ||
+        m.key === "full-size-sample" ||
+        m.value === "full-size-sample" ||
+        m.key.includes("full-size-sample-") ||
+        m.value.includes("full-size-sample-")
+      );
+
+    // Calculate M2 quantity if not provided and not a sample
+    let finalM2Quantity = newM2Quantity;
+    if (!isSample && !finalM2Quantity) {
+      finalM2Quantity = calculateM2Quantity(item, newQuantity);
+    }
+
+    console.log('Background sync - remove/add operation:', {
+      removing_item_id: item.id,
+      product_id: item.product_id,
+      variation_id: item.variation_id,
+      new_quantity: newQuantity,
+      calculated_m2_quantity: finalM2Quantity,
+      is_sample: isSample
+    });
+
+    // Make direct API calls for background sync (no UI refresh needed)
+    try {
+      // 1. Remove the item
+      await axios.delete(`${baseUrl}/cart/${item.id}`);
+      
+      // 2. Add it back with new quantities
+      const addPayload: any = {
+        product_id: item.product_id,
+        variation_id: item.variation_id,
+        quantity: newQuantity,
+        is_sample: isSample
+      };
+
+      if (!isSample && finalM2Quantity) {
+        addPayload.m2_quantity = finalM2Quantity;
+      }
+
+      console.log('Background sync - adding back with payload:', addPayload);
+
+      await axios.post(`${baseUrl}/cart/add`, addPayload);
+      
+      // 3. Do a final sync to get the actual backend state (but don't wait for it)
+      setTimeout(() => {
+        queryClient.invalidateQueries({ queryKey: ['cart'] });
+      }, 100); // Small delay to let backend processing complete
+      
+      console.log('Background sync completed - remove/add successful');
+    } catch (error) {
+      console.error('Background sync failed:', error);
+      throw error;
+    }
+  };
+
+  // Handle quantity increment
+  const handleQuantityIncrement = (item: any) => {
+    const newQuantity = item.quantity + 1;
+    handleQuantityUpdate(item, newQuantity);
+  };
+
+  // Handle quantity decrement
+  const handleQuantityDecrement = (item: any) => {
+    if (item.quantity > 1) {
+      const newQuantity = item.quantity - 1;
+      handleQuantityUpdate(item, newQuantity);
+    }
+  };
+
+  // Handle M2 quantity increment
+  const handleM2Increment = (item: any) => {
+    const sizeData = item.meta_data?.find((m: any) => m.key === "pa_sizemm")?.value;
+    
+    if (!sizeData) return;
+    
+    const dimensions = sizeData.split("x").map(Number);
+    if (dimensions.length < 2) return;
+    
+    const lengthM = dimensions[0] / 1000;
+    const widthM = dimensions[1] / 1000;
+    const pieceAreaM2 = lengthM * widthM;
+    
+    const newM2Quantity = parseFloat((item.m2_quantity + pieceAreaM2).toFixed(3));
+    const newQuantity = Math.round(newM2Quantity / pieceAreaM2);
+    
+    handleQuantityUpdate(item, newQuantity, newM2Quantity);
+  };
+
+  // Handle M2 quantity decrement
+  const handleM2Decrement = (item: any) => {
+    const sizeData = item.meta_data?.find((m: any) => m.key === "pa_sizemm")?.value;
+    
+    if (!sizeData) return;
+    
+    const dimensions = sizeData.split("x").map(Number);
+    if (dimensions.length < 2) return;
+    
+    const lengthM = dimensions[0] / 1000;
+    const widthM = dimensions[1] / 1000;
+    const pieceAreaM2 = lengthM * widthM;
+    
+    const newM2Quantity = Math.max(pieceAreaM2, parseFloat((item.m2_quantity - pieceAreaM2).toFixed(3)));
+    const newQuantity = Math.round(newM2Quantity / pieceAreaM2);
+    
+    if (newQuantity >= 1) {
+      handleQuantityUpdate(item, newQuantity, newM2Quantity);
+    }
+  };
 
   const handleRemoveItem = async (itemId: number) => {
     setRemovingItem((prev) => [...prev, itemId]);
@@ -124,31 +359,6 @@ const Cart = () => {
                       </p>
                       {item.variation_id && (
                         <>
-                          {/* <p className="text-xs text-gray-500 font-[var(--font-light)] mt-1">
-                            Size:{" "}
-                            {item.meta_data?.find(
-                              (m: any) =>
-                                m.key === "free-sample" ||
-                                m.value === "free-sample"
-                            )
-                              ? "Free Sample"
-                              : item.meta_data?.find(
-                                  (m: any) =>
-                                    m.key === "full-size-sample" ||
-                                    m.value === "full-size-sample" ||
-                                    m.key.includes("full-size-sample-") ||
-                                    m.value.includes("full-size-sample-")
-                                )
-                              ? "Full Size Sample"
-                              : item.meta_data?.find(
-                                  (m: any) => m.key === "pa_sizemm"
-                                )?.value ||
-                                item.meta_data?.find(
-                                  (m: any) => m.key === "Size"
-                                )?.value ||
-                                "Variation"}{" "}
-                            | Price Per Piece: £{item.price}
-                          </p> */}
                           <p className="text-xs text-gray-500 font-[var(--font-light)] mt-1">
                             Size:{" "}
                             {item.meta_data?.find(
@@ -186,7 +396,11 @@ const Cart = () => {
                                 Quantity (Pieces)
                               </label>
                               <span className="relative max-w-min">
-                                <button className="cursor-pointer absolute left-4 md:top-5 top-4.5 flex items-center justify-center">
+                                <button 
+                                  onClick={() => handleQuantityDecrement(item)}
+                                  disabled={item.quantity <= 1 || updatingItem.includes(item.id)}
+                                  className="cursor-pointer absolute left-4 md:top-5 top-4.5 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
                                   <svg
                                     width="9"
                                     height="3"
@@ -204,20 +418,46 @@ const Cart = () => {
                                   type="text"
                                   className="border border-[#e5e5e5] text-center py-2 md:w-[120px] w-[100px] outline-none md:text-md text-sm"
                                   value={item.quantity}
+                                  readOnly
                                 />
-                                <button className="cursor-pointer absolute right-4 md:top-4 top-3.5 flex items-center justify-center">
-                                  <svg
-                                    width="11"
-                                    height="11"
-                                    viewBox="0 0 13 12"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M5.667 5.167v-5h1.667v5h5v1.666h-5v5H5.667v-5h-5V5.167h5z"
-                                      fill="#000"
-                                    ></path>
-                                  </svg>
+                                <button 
+                                  onClick={() => handleQuantityIncrement(item)}
+                                  disabled={updatingItem.includes(item.id)}
+                                  className="cursor-pointer absolute right-4 md:top-4 top-3.5 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                  {updatingItem.includes(item.id) ? (
+                                    <svg
+                                      className="animate-spin h-4 w-4"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <circle
+                                        className="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                      />
+                                      <path
+                                        className="opacity-75"
+                                        fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                      />
+                                    </svg>
+                                  ) : (
+                                    <svg
+                                      width="11"
+                                      height="11"
+                                      viewBox="0 0 13 12"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M5.667 5.167v-5h1.667v5h5v1.666h-5v5H5.667v-5h-5V5.167h5z"
+                                        fill="#000"
+                                      ></path>
+                                    </svg>
+                                  )}
                                 </button>
                               </span>
                             </span>
@@ -232,7 +472,11 @@ const Cart = () => {
                                   Quantity (M²)
                                 </label>
                                 <span className="relative max-w-min">
-                                  <button className="cursor-pointer absolute left-4 md:top-5 top-4.5 flex items-center justify-center">
+                                  <button 
+                                    onClick={() => handleM2Decrement(item)}
+                                    disabled={updatingItem.includes(item.id)}
+                                    className="cursor-pointer absolute left-4 md:top-5 top-4.5 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                                  >
                                     <svg
                                       width="9"
                                       height="3"
@@ -250,20 +494,46 @@ const Cart = () => {
                                     type="text"
                                     value={item.m2_quantity}
                                     className="border border-[#e5e5e5] text-center py-2 md:w-[120px] w-[100px] outline-none md:text-md text-sm"
+                                    readOnly
                                   />
-                                  <button className="cursor-pointer absolute right-4 md:top-4 top-3.5 flex items-center justify-center">
-                                    <svg
-                                      width="11"
-                                      height="11"
-                                      viewBox="0 0 13 12"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M5.667 5.167v-5h1.667v5h5v1.666h-5v5H5.667v-5h-5V5.167h5z"
-                                        fill="#000"
-                                      ></path>
-                                    </svg>
+                                  <button 
+                                    onClick={() => handleM2Increment(item)}
+                                    disabled={updatingItem.includes(item.id)}
+                                    className="cursor-pointer absolute right-4 md:top-4 top-3.5 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                                  >
+                                    {updatingItem.includes(item.id) ? (
+                                      <svg
+                                        className="animate-spin h-4 w-4"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <circle
+                                          className="opacity-25"
+                                          cx="12"
+                                          cy="12"
+                                          r="10"
+                                          stroke="currentColor"
+                                          strokeWidth="4"
+                                        />
+                                        <path
+                                          className="opacity-75"
+                                          fill="currentColor"
+                                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                        />
+                                      </svg>
+                                    ) : (
+                                      <svg
+                                        width="11"
+                                        height="11"
+                                        viewBox="0 0 13 12"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M5.667 5.167v-5h1.667v5h5v1.666h-5v5H5.667v-5h-5V5.167h5z"
+                                          fill="#000"
+                                        />
+                                      </svg>
+                                    )}
                                   </button>
                                 </span>
                               </span>

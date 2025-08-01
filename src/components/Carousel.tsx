@@ -23,7 +23,7 @@ export const carouselSlides: Slide[] = [
     subtitle: "style that Lasts",
     title: "Marble Chequerboard Tiles",
     description:
-      "Elevate your interiors with the timeless elegance of chequerboard marble tiles — a bold yet classic design that never goes out of style. Perfectly balancing dark and light marble tones, this pattern evokes grand European halls and stately homes, now reimagined for contemporary living. Luxurious, striking, and enduring — this is tradition with an edge.",
+      "Elevate your interiors with the timeless elegance of chequerboard marble tiles — a bold yet classic design that never goes out of style.",
     link: "/collections/design-pattern-collection/chequerboard-tiles",
   },
   {

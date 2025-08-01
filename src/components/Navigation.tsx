@@ -3,14 +3,17 @@ import { CgProfile } from "react-icons/cg";
 import { BiBasket } from "react-icons/bi";
 import logo from "../assets/images/Authentic-Stone-Logo-Black-400x33-1.png";
 import useIsMobile from "../hooks/useIsMobile";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Cart from "./Cart";
 import { useCartState } from "../hooks/useCartState";
 import { useCart } from "../hooks/useCart";
 import { Link } from "react-router";
+import SearchComponent from "./SearchComponent";
 
 const Navigation = () => {
   const isMobile = useIsMobile();
+  const [openSearch, setOpenSearch] = useState<boolean>(false);
+
   const { isCartOpen, toggleCart } = useCartState();
   const { cartItems } = useCart();
 
@@ -30,7 +33,10 @@ const Navigation = () => {
     <>
       <div className="w-full h-[55px] border-b-0 md:border-b md:border-[#e5e5e5] flex items-center justify-between">
         {/* Searchbar */}
-        <span className="h-full relative hidden md:flex items-center">
+        <span
+          onClick={() => setOpenSearch(true)}
+          className="h-full relative hidden md:flex items-center"
+        >
           <CiSearch
             size={22}
             color="#1d2328"
@@ -82,6 +88,10 @@ const Navigation = () => {
         </span>
       </div>
       <Cart />
+      <SearchComponent
+        isOpen={openSearch}
+        onClose={() => setOpenSearch(false)}
+      />
     </>
   );
 };

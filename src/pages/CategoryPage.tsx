@@ -19,6 +19,7 @@
   import { useCategoryQuery } from "../hooks/useCategoryQuery";
   import useIsMobile from "../hooks/useIsMobile";
   import MobileFilter from "../components/MobileFilter";
+import Loader from "../components/Loader";
 
   const CategoryPage = () => {
     const isMobile = useIsMobile();
@@ -113,12 +114,14 @@
     const isFetchingNextPage = selectedQuery?.isFetchingNextPage || false;
 
     if (isLoading) {
-      return <div className="text-center py-10">Loading products...</div>;
+      return <div className="text-center min-h-screen py-10">
+        <Loader />
+      </div>;
     }
 
     if (isError || !finalProducts || !Array.isArray(finalProducts)) {
       return (
-        <div className="text-center py-10">
+        <div className="text-center min-h-screen py-10">
           No products found for {getDisplayTitle()}
         </div>
       );

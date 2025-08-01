@@ -14,6 +14,7 @@ const Menubar = () => {
   const isMobile = useIsMobile();
   const [activeTitle, setActiveTitle] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
   const { data: apiData } = useMegamenuQuery();
 
   const handleClick = (title: string) => {

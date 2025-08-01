@@ -76,7 +76,7 @@ const SingleProduct = () => {
 
   return (
     <>
-      <div className="min-h-screen h-auto md:px-10 px-4 flex flex-col">
+      <div className="min-h-screen h-auto flex flex-col">
         <Breadcrumb />
         <div className="flex md:flex-row flex-col my-8 min-h-screen border-b border-[#e5e5e5] pb-10">
           <div className="md:flex-3 flex-1 flex md:flex-row flex-col">
@@ -159,13 +159,13 @@ const SingleProduct = () => {
             </div>
 
             {/* Product Title */}
-            <div className="md:mx-14 mx-0 md:px-8 px-4 pt-8 pb-4 flex item-center justify-center">
+            <div className="md:mx-14 md:px-8 px-4 pt-8 pb-4 flex item-center justify-center">
               <h1 className="tracking-wide text-[#1d2328] md:text-5xl text-3xl mx-auto text-center">
                 {product.name}
               </h1>
             </div>
             {/* Price Section */}
-            <div className="md:mx-14 mx-0 flex items-center">
+            <div className="md:mx-14 mx-4 flex items-center">
               <span className="border-t border-[#e5e5e5] flex-2"></span>
               <span className="flex-3 mx-auto w-max text-nowrap gap-4 uppercase md:px-6 px-4 border rounded-3xl border-[#e5e5e5] flex items-center md:text-md text-sm text-amber-800 tracking-wider font-[var(--font-regular)]">
                 from
@@ -177,7 +177,7 @@ const SingleProduct = () => {
             </div>
 
             {/* Size Option Section */}
-            <div className="relative md:mx-14 mx-0">
+            <div className="relative md:mx-14 mx-4">
               <DisplaySizeOptions
                 onOpenSizeList={handleOpenSizeList}
                 variations={variations || []}
@@ -188,7 +188,7 @@ const SingleProduct = () => {
             </div>
             {/* Calculator Section */}
 
-            <div className="-mt-10 md:mx-14 mx-0">
+            <div className="-mt-10 md:mx-14 mx-4">
               <Calculator
                 selectedVariation={selectedVariation}
                 setFullSampleQty={setFullSampleQty}
@@ -200,7 +200,7 @@ const SingleProduct = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="md:mx-14 mx-0 relative">
+            <div className="md:mx-14 mx-4 relative">
               <ActionButtons
                 selectedVariation={selectedVariation}
                 fullSampleQty={fullSampleQty}

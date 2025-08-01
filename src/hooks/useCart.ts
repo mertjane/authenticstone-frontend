@@ -38,6 +38,40 @@ export const useCart = () => {
     },
   });
 
+  // Helper function to find existing item in cart
+  const findExistingItem = (product_id: number, variation_id?: number, is_sample?: boolean) => {
+    return cartItems.find(item =>
+      item.product_id === product_id &&
+      item.variation_id === variation_id &&
+      item.is_sample === is_sample
+    );
+  };
+
+  const updateCartItem = useMutation({
+    mutationFn: async (payload: {
+      itemId: number;
+      quantity: number;
+      m2_quantity?: number;
+    }) => {
+      // Note: Backend PUT endpoint has issues - it treats itemId as orderId
+      // and adds quantities instead of setting them. This is kept for potential future fixes.
+      const response = await axios.put(
+        `${baseUrl}/cart/${payload.itemId}`,
+        {
+          quantity: payload.quantity,
+          m2_quantity: payload.m2_quantity
+        }
+      );
+      return response.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['cart'] });
+    },
+    onError: (error: any) => {
+      console.error('Error updating cart item:', error.response?.data || error.message);
+    }
+  });
+
   const addToCart = useMutation({
     mutationFn: async (item: {
       product_id: number;
@@ -89,26 +123,6 @@ export const useCart = () => {
     }
   });
 
-  const updateCartItem = useMutation({
-    mutationFn: async (payload: {
-      itemId: number;
-      quantity: number;
-      m2_quantity?: number;
-    }) => {
-      const response = await axios.put(
-        `${baseUrl}/cart/${payload.itemId}`,
-        {
-          quantity: payload.quantity,
-          m2_quantity: payload.m2_quantity
-        }
-      );
-      return response.data;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['cart'] });
-    }
-  });
-
   const removeFromCart = useMutation({
     mutationFn: async (itemId: number) => {
       const response = await axios.delete(`${baseUrl}/cart/${itemId}`);
@@ -121,7 +135,6 @@ export const useCart = () => {
       console.error('Error removing item:', error);
     }
   });
-
 
   // Calculate total display quantity (M² for regular items, pieces for samples)
   const getDisplayQuantity = (item: CartItem) => {
@@ -141,15 +154,6 @@ export const useCart = () => {
     return cartItems.reduce((sum, item) => sum + getItemTotal(item), 0);
   };
 
-  // Helper function to find existing item in cart
-  const findExistingItem = (product_id: number, variation_id?: number, is_sample?: boolean) => {
-    return cartItems.find(item =>
-      item.product_id === product_id &&
-      item.variation_id === variation_id &&
-      item.is_sample === is_sample
-    );
-  };
-
   return {
     cartItems,
     isLoading: isCartLoading,
@@ -162,4 +166,3 @@ export const useCart = () => {
     findExistingItem
   };
 };
-

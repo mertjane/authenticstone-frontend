@@ -100,7 +100,7 @@ const Quickview = ({
 
       {/* Sliding Quickview */}
       <div
-        className={`fixed overflow-y-auto overflow-x-hidden top-0 right-0 w-full md:w-[620px] h-full p-10 bg-white z-50 transform transition-transform duration-300 flex flex-col ${
+        className={`fixed overflow-y-auto overflow-x-hidden top-0 right-0 w-full md:w-[620px] h-full md:p-10 p-4 bg-white z-50 transform transition-transform duration-300 flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
